@@ -66,7 +66,7 @@ defmodule Metex.Worker do
 
   # Helper Functions
 
-  def temperature_of(location) do
+  defp temperature_of(location) do
     location
     |> url_for()
     |> HTTPoison.get()
