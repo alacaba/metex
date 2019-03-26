@@ -1,4 +1,20 @@
 defmodule Metex.Worker do
+  def ping do
+    receive do
+      _ ->
+        IO.puts "pong"
+    end
+    ping
+  end
+
+  def pong do
+    receive do
+      _ ->
+        IO.puts "ping"
+    end
+    pong
+  end
+
   def loop do
     receive do
       {sender_pid, location} ->
